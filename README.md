@@ -66,13 +66,13 @@ A library providing ETH to USD conversion utilities.
 
 The project includes 11 comprehensive unit tests covering:
 
-- ✅ Minimum USD requirement validation
-- ✅ Owner authorization checks
-- ✅ Funding data structure updates
-- ✅ Multiple funder scenarios
-- ✅ Single and multi-funder withdrawals
-- ✅ Event emission validation
-- ✅ Receive and fallback function triggers
+- Minimum USD requirement validation
+- Owner authorization checks
+- Funding data structure updates
+- Multiple funder scenarios
+- Single and multi-funder withdrawals
+- Event emission validation
+- Receive and fallback function triggers
 
 **Run tests:**
 ```bash
