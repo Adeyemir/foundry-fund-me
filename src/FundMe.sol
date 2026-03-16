@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import {AggregatorV3Interface} from "../lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import {
+    AggregatorV3Interface
+} from "../lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import {PriceConverter} from "./PriceConverter.sol";
 
 error FundMe__NotOwner();
@@ -41,7 +43,7 @@ contract FundMe {
         funders = new address[](0);
 
         uint256 totalAmount = address(this).balance;
-        (bool callSuccess, ) = payable(msg.sender).call{value: totalAmount}("");
+        (bool callSuccess,) = payable(msg.sender).call{value: totalAmount}("");
         require(callSuccess, "Call failed");
         emit Withdrawn(msg.sender, totalAmount);
     }

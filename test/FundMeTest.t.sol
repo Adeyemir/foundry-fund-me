@@ -107,14 +107,14 @@ contract FundMeTest is Test {
 
     function testReceiveFunctionIsTriggered() external {
         vm.prank(USER);
-        (bool success, ) = address(fundMe).call{value: SEND_VALUE}("");
+        (bool success,) = address(fundMe).call{value: SEND_VALUE}("");
         assert(success);
         assertEq(fundMe.getAddressToAmountFunded(USER), SEND_VALUE);
     }
 
     function testFallbackFunctionIsTriggered() external {
         vm.prank(USER);
-        (bool success, ) = address(fundMe).call{value: SEND_VALUE}(abi.encodeWithSignature("nonExistentFunction()"));
+        (bool success,) = address(fundMe).call{value: SEND_VALUE}(abi.encodeWithSignature("nonExistentFunction()"));
         assert(success);
         assertEq(fundMe.getAddressToAmountFunded(USER), SEND_VALUE);
     }
